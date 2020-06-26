@@ -3,7 +3,5 @@ language: java
 jdk:
   - oraclejdk11
 
-script: ./gradlew build jacocoTestReport
-
 after_success:
   - ./gradlew jacocoTestReport coveralls
