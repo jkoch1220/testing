@@ -1,6 +1,8 @@
 plugins {
 	id 'org.springframework.boot' version '2.3.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'jacoco'
+	id 'com.github.kt3k.coveralls' version '2.8.4'
 	id 'java'
 }
 
@@ -10,6 +12,13 @@ sourceCompatibility = '14'
 
 repositories {
 	mavenCentral()
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled = true // coveralls plugin depends on xml format report
+		html.enabled = true
+	}
 }
 
 dependencies {
